@@ -1,9 +1,11 @@
-"""
-load_mnist.py
+"""load_mnist.py
 
 Loads MNIST label and image files and parses into numpy.ndarray objects.
 A single image file is represented as a row in the array.
+
 """
+
+
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -86,11 +88,9 @@ def load_images(filename):
 def sample_image():
     """Load data and generate an array of 5 sample images for display"""    
     
-    X = get_images(r'../data/t10k-images-idx3-ubyte')
-    y = get_labels(r'../data/t10k-labels-idx1-ubyte')
-    
-    img = X[1].reshape((28,28))
-    
+    X = load_images(r'../data/t10k-images-idx3-ubyte')
+    y = load_labels(r'../data/t10k-labels-idx1-ubyte')
+      
     fig = plt.figure(figsize=(5,1.5), dpi=300)
     axs = fig.subplots(1,5)
     
